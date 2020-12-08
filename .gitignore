@@ -1,0 +1,13 @@
+# see: https://git-scm.com/docs/gitignore
+
+# JetBrains IDE
+# PhpStorm, WebStorm, PyCharm, GoLand, DataGrip, ...
+.idea
+
+# Composer
+/composer.phar
+/composer.lock
+/vendor
+
+# PHPStan
+/phpstan.neon
