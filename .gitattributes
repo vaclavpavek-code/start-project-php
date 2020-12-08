@@ -1,0 +1,16 @@
+# see: https://git-scm.com/docs/gitattributes
+
+# Files and directories with the attribute
+# export-ignore won’t be added to archive files.
+.gitattributes      export-ignore
+.gitignore          export-ignore
+.github             export-ignore
+.gitlab             export-ignore
+.gitlab-ci.yml      export-ignore
+phpstan.neon.dist   export-ignore
+docs/               export-ignore
+tests/              export-ignore
+
+# Detect blob languages on GitHub.com.
+# https://github.com/github/linguist
+*.php*  diff=php    linguist-language=PHP
