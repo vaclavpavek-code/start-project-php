@@ -1,0 +1,66 @@
+{
+    "name": "vaclavpavek/start-project-php",
+    "description": "Base skeleton for new PHP project or composer package.",
+    "type": "project",
+    "keywords": ["skeleton", "starter", "project"],
+    "homepage": "https://github.com/VaclavPavek/start-project-php",
+    "license": [
+        "MIT",
+        "BSD-3-Clause",
+        "proprietary"
+    ],
+    "authors": [
+        {
+            "name": "Václav Pávek",
+            "homepage": "https://www.vaclavpavek.cz"
+        }
+    ],
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/VaclavPavek"
+        },
+        {
+            "type": "other",
+            "url": "https://www.vaclavpavek.cz/funding"
+        }
+    ],
+    "suggest": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "VaclavPavek\\StartProjectPhp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "VaclavPavek\\StartProjectPhp\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "require-dev": {
+
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": {
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    },
+    "scripts": {
+
+    },
+    "scripts-descriptions": {
+
+    }
+}
