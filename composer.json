@@ -2,11 +2,10 @@
     "name": "vaclavpavek/start-project-php",
     "description": "Base skeleton for new PHP project or composer package.",
     "type": "project",
-    "keywords": ["skeleton", "starter", "project"],
+    "keywords": ["skeleton", "starter", "project", "composer-project"],
     "homepage": "https://github.com/VaclavPavek/start-project-php",
     "license": [
         "MIT",
-        "BSD-3-Clause",
         "proprietary"
     ],
     "authors": [
