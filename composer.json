@@ -29,19 +29,23 @@
     },
     "autoload": {
         "psr-4": {
-            "VaclavPavek\\StartProjectPhp\\": "src/"
+            "VaclavPavek\\Project\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VaclavPavek\\StartProjectPhp\\Tests\\": "tests"
+            "VaclavPavek\\Project\\Tests\\": "tests"
         }
     },
     "require": {
         "php": "^7.4 || ^8.0"
     },
     "require-dev": {
-
+        "grifart/phpstan-oneline": "^0.4.0",
+        "pepakriz/phpstan-exception-rules": "^0.11.2",
+        "phpstan/phpstan": "^0.12.59",
+        "phpstan/phpstan-deprecation-rules": "^0.12.5",
+        "phpstan/phpstan-strict-rules": "^0.12.5"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -57,9 +61,23 @@
         }
     },
     "scripts": {
-
+        "phpstan": "phpstan analyse",
+        "phpstan-oneline": "phpstan analyse --error-format oneline",
+        "prj:qa": [
+            "@composer install",
+            "@phpstan"
+        ],
+        "prj:verify": [
+            "@prj:qa"
+        ],
+        "prj:production": [
+            "@prj:verify",
+            "@composer install --no-dev"
+        ]
     },
     "scripts-descriptions": {
-
+        "prj:qa": "Check Quality assurance.",
+        "prj:verify": "Verify the project is OK.",
+        "prj:production": "Verify project, remove development packages and prepare project to deploy."
     }
 }

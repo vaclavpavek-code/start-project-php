@@ -31,4 +31,4 @@ Contributing
 
 This is a **privately** developed project.
 The primary development place is [gitlab:VaclavPavek/start-project-php](https://gitlab.com/VaclavPavek/start-project-php).
-Protected branches are automatically mirrored on [github.com:/VaclavPavek/start-project-php](https://github.com/VaclavPavek/start-project-php).
+Protected branches are automatically mirrored to [github.com:/VaclavPavek/start-project-php](https://github.com/VaclavPavek/start-project-php).

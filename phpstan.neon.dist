@@ -1,0 +1,10 @@
+includes:
+	- vendor/grifart/phpstan-oneline/config.neon
+	- vendor/pepakriz/phpstan-exception-rules/extension.neon
+	- vendor/phpstan/phpstan-deprecation-rules/rules.neon
+	- vendor/phpstan/phpstan-strict-rules/rules.neon
+
+parameters:
+    paths:
+        - src
+    level: max
