@@ -1,9 +1,9 @@
 {
     "name": "vaclavpavek/start-project-php",
-    "description": "Base skeleton for new PHP project or composer package.",
+    "description": "This is a skeleton for any new project using PHP.",
     "type": "project",
     "keywords": ["skeleton", "starter", "project", "composer-project"],
-    "homepage": "https://github.com/VaclavPavek/start-project-php",
+    "homepage": "https://github.com/vaclavpavek-code/start-project-php",
     "license": [
         "MIT",
         "proprietary"
