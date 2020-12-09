@@ -26,9 +26,15 @@ composer suggests
 ```
 
 
-Contributing
-------------
-
-This is a **privately** developed project.
-The primary development place is [gitlab:VaclavPavek/start-project-php](https://gitlab.com/VaclavPavek/start-project-php).
-Protected branches are automatically mirrored to [github.com:/VaclavPavek/start-project-php](https://github.com/VaclavPavek/start-project-php).
+Initial setup
+-------------
+- modify `composer.json`
+    - name
+    - description
+    - keywords
+    - homepage
+    - autoload
+    - autoload-dev
+- modify `.github/workflows/qa.yaml`
+- modify `.gitlab/gitlab-ci.yaml` 
+- GitLab repository: Settings > CI / CD > General pipelines > Custom CI configuration path
