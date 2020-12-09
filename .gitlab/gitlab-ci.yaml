@@ -6,7 +6,7 @@ stages:
 cache: &global_cache
     key:
         files:
-            #ccc Use composer.json for key, if composer.lock is not committed.
+            #Use composer.json for key, if composer.lock is not committed.
             - composer.json
         prefix: composer
     paths:
