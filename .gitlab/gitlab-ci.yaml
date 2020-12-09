@@ -1,0 +1,59 @@
+image: php:7.4
+
+stages:
+    - "Quality Assurance"
+
+cache: &global_cache
+    key:
+        files:
+            #ccc Use composer.json for key, if composer.lock is not committed.
+            - composer.json
+        prefix: composer
+    paths:
+        - $(php composer.phar config cache-files-dir)
+
+.job_template: &job_template
+    interruptible: true
+    before_script:
+        - apt-get update -yqq
+        - apt-get install git unzip -yqq
+        - apt-get install libcurl4-openssl-dev libxml2-dev libpng-dev libonig-dev -yqq
+        - apt-cache search php*
+        # - php -r 'print_r(get_loaded_extensions());'
+        # - docker-php-ext-install curl dom gd iconv intl json mbstring mysqli openssl pdo_mysql pdo_pgsql pdo_sqlite pgsql readline simplexml sqlite3 tokenizer xml xmlreader xmlwriter zip
+        - curl -sS https://getcomposer.org/installer | php
+
+.job_php_lowest_template: &job_php_lowest_template
+    stage: "Quality Assurance"
+    cache:
+        <<: *global_cache
+    <<: *job_template
+    script:
+        - php composer.phar update --no-progress --prefer-lowest
+        - php composer.phar prj:qa
+    rules:
+        -   if: '$CI_PIPELINE_SOURCE == "push" && ($CI_COMMIT_BRANCH == "master" || $CI_COMMIT_BRANCH =~ /^v|feature-|fix-/)'
+        -   if: '$CI_PIPELINE_SOURCE == "merge_request_event" && ($CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^feature-|fix-/)'
+
+.job_php_template: &job_php_template
+    <<: *job_php_lowest_template
+    script:
+        - php composer.phar update --no-progress
+        - php composer.phar prj:qa
+
+
+"PHP 7.4 --prefer-lowest":
+    image: php:7.4
+    <<: *job_php_lowest_template
+
+"PHP 7.4":
+    image: php:7.4
+    <<: *job_php_template
+
+"PHP 8.0 --prefer-lowest":
+    image: php:8.0
+    <<: *job_php_lowest_template
+
+"PHP 8.0":
+    image: php:8.0
+    <<: *job_php_template
