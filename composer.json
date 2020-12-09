@@ -42,10 +42,12 @@
     },
     "require-dev": {
         "grifart/phpstan-oneline": "^0.4.0",
+        "nette/tester": "^2.3",
         "pepakriz/phpstan-exception-rules": "^0.11.2",
         "phpstan/phpstan": "^0.12.59",
         "phpstan/phpstan-deprecation-rules": "^0.12.5",
-        "phpstan/phpstan-strict-rules": "^0.12.5"
+        "phpstan/phpstan-strict-rules": "^0.12.5",
+        "tracy/tracy": "^2.7"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -53,6 +55,7 @@
 
     },
     "config": {
+        "optimize-autoloader": true,
         "sort-packages": true
     },
     "extra": {
@@ -64,10 +67,10 @@
         "phpstan": "phpstan analyse",
         "phpstan-oneline": "phpstan analyse --error-format oneline",
         "prj:qa": [
-            "@composer install",
             "@phpstan"
         ],
         "prj:verify": [
+            "@composer install",
             "@prj:qa"
         ],
         "prj:production": [
